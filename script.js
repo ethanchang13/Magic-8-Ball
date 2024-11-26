@@ -1,18 +1,21 @@
 //Get user name
 let userName = prompt("Hello, what is your name?");
+let responseImg = document.getElementById("response-img");
+let responseText = document.getElementById("response-text");
+let greeting = document.getElementById("greeting");
 //Input user name to website
 userName
-  ? (document.getElementById("greeting").innerText = `Hello, ${userName}!`)
-  : (document.getElementById("greeting").innerText = "Hello Stranger!");
+  ? (greeting.innerText = `Hello, ${userName}!`)
+  : (greeting.innerText = "Hello Stranger!");
 
 function shakeMagic8Ball() {
   //Get user question
-  let userQuestion = "Should I study today?";
+  let userQuestion = prompt("What do you want to ask the 8 Ball?");
 
-  console.log(`${userName} asked: ${userQuestion}`);
   //DO NOT TOUCH THIS CODE!
   let randomNumber = Math.floor(Math.random() * 8);
   let eightBall = "";
+  let imageChoice = "";
   switch (randomNumber) {
     case 0:
       eightBall = "It is certain";
@@ -37,6 +40,11 @@ function shakeMagic8Ball() {
       break;
     case 7:
       eightBall = "Signs point to yes";
+      break;
   }
   console.log(`Magic Eight Ball: ${eightBall}`);
+
+  responseText.innerText = `${userName} has asked ${userQuestion} to the almighty 8 Ball. The 8 Ball has replied ${eightBall}!`;
+
+  responseImg.src = imageChoice;
 }
