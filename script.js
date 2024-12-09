@@ -13,6 +13,12 @@ function shakeMagic8Ball() {
   // Get user question
   let userQuestion = prompt("What do you want to ask the 8 Ball?");
 
+  responseImg.classList.add("shake");
+
+  setTimeout(() => {
+    responseImg.classList.remove("shake");
+  }, 500);
+
   // DO NOT TOUCH THIS CODE!
   let randomNumber = Math.floor(Math.random() * 8);
   let eightBall = "";
