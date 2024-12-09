@@ -7,10 +7,18 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 #magic-8-ball {
   text-align: center;
+}
+
+#ball-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 #ball-container {
@@ -28,6 +36,7 @@ body {
   width: 80%;
   height: 80%;
   transition: transform 0.4s ease-in-out;
+  position: absolute;
 }
 
 h1 {
