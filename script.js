@@ -13,8 +13,10 @@ function shakeMagic8Ball() {
   // Get user question
   let userQuestion = prompt("What do you want to ask the 8 Ball?");
 
+  // Add shaking animation
   responseImg.classList.add("shake");
 
+  // Remove shaking animation after it finishes
   setTimeout(() => {
     responseImg.classList.remove("shake");
   }, 500);
