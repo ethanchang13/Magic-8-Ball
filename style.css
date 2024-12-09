@@ -10,6 +10,25 @@ body {
   overflow: hidden;
 }
 
+/* title */
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 139, 0.7);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* body text */
+p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 8 ball */
 #magic-8-ball {
   text-align: center;
 }
@@ -22,8 +41,8 @@ body {
 }
 
 #ball-container {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   margin-top: 20px;
   position: relative;
   border-radius: 50%;
@@ -39,23 +58,37 @@ body {
   position: absolute;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #f7f7f7;
-}
-
+/* custom button */
 button {
-  font-size: 1rem;
-  padding: 10px 20px;
+  font-size: 1.1rem;
+  padding: 12px 30px;
+  background: linear-gradient(145deg, #252525, #3d3d3d);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: #28a745;
+  background: linear-gradient(145deg, #3d3d3d, #525252);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7),
+    0px 0px 14px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
-#response-text {
-  font-size: 1.2rem;
-  margin-top: 20px;
+button:active {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6),
+    0px 0px 8px rgba(255, 255, 255, 0.2);
+  transform: translateY(1px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 /* shake animation */
@@ -79,4 +112,18 @@ button:hover {
   100% {
     transform: rotate(0deg);
   }
+}
+
+/*footer text*/
+#footer-text {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+/*text wrapper*/
+.text-wrapper {
+  display: flex;
+  justify-content: center;
 }

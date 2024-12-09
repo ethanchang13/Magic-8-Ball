@@ -12,6 +12,10 @@ userName
 function shakeMagic8Ball() {
   // Get user question
   let userQuestion = prompt("What do you want to ask the 8 Ball?");
+  if (!userQuestion) {
+    alert("Please ask a question.");
+    return;
+  }
 
   // Add shaking animation
   responseImg.classList.add("shake");
@@ -25,33 +29,45 @@ function shakeMagic8Ball() {
   let randomNumber = Math.floor(Math.random() * 8);
   let eightBall = "";
   let imageChoice = "";
+  let imagePath = "";
 
   switch (randomNumber) {
     case 0:
       eightBall = "It is certain";
+      imagePath = "imgs/It is certain.gif";
       break;
     case 1:
       eightBall = "It is decidedly so";
+      imagePath = "imgs/It is decidedly so.gif";
       break;
     case 2:
-      eightBall = "Reply hazy, try again";
+      eightBall = "Reply hazy, try again later";
+      imagePath = "imgs/Reply hazy try again later.gif";
       break;
     case 3:
       eightBall = "Cannot predict now";
+      imagePath = "imgs/Cannot predict now.gif";
       break;
     case 4:
-      eightBall = "Do not count on it";
+      eightBall = "Don't count on it";
+      imagePath = "imgs/Don't count on it.gif";
       break;
     case 5:
       eightBall = "My sources say no";
+      imagePath = "imgs/My sources say no.gif";
       break;
     case 6:
       eightBall = "Outlook not so good";
+      imagePath = "imgs/Outlook not so good.gif";
       break;
     case 7:
-      eightBall = "Signs point to yes";
+      eightBall = "As I see it, yes";
+      imagePath = "imgs/As I see it yes.gif";
       break;
   }
+
+  //Update image source
+  responseImg.src = imagePath;
 
   // Update the response text
   responseText.innerText = `${userName} has asked "${userQuestion}" to the almighty 8 Ball. The 8 Ball has replied: ${eightBall}`;
